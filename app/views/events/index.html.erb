@@ -20,14 +20,14 @@
       enlarging the community of people who give back and teach others.
       </p>
 
-      <%# if @events != nil%> 
-        <% if @events.empty? %>
-          <h2>There are currently no upcoming events.</h2>
-        <% end %>
+<%# Error # 2 %>
+      <% if @events.nil? %>
+        <h2>There are currently no upcoming events.</h2>
+      <% else %>
         <% @events.each do |event| %>
           <%= render 'upcoming_event', event: event %>
         <% end %>
-      <%#end%>
+      <% end %>
 
       <script>
         window.whenReady(function () {
